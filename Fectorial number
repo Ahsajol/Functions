@@ -1,0 +1,91 @@
+<hr/>
+	<h2>Fectorial Number</h2>
+<hr/>
+<?php
+if(isset($_POST["submit"])){
+	$fect= $_POST['num'];
+	$flag=1;
+		for($i=$fect;$i>0;$i--){
+			$flag=$flag*$i;
+		}
+		echo"Fectorial of $fect is ".$flag;
+}
+?>
+
+<html>
+<head>
+	<title>practice</title>
+</head>
+<body>
+	<form method="post" action="Practice.php">
+		<input type="post" name="num"/>
+		<input type="submit" value="submit" name="submit"/>
+	</form>
+</body>
+</html>
+
+<hr/>
+	<h2>Prime Number</h2>
+<hr/>
+<?php
+if(isset($_POST["submit"])){
+	function primecheck($number){
+		if ($number==1)
+			return 0;
+		for($i=2; $i<=$number/2; $i++){
+			if($number % $i==0)
+				return 0;
+		}
+		return 1;
+	}
+	$number=$_POST['num'];
+	$flag=primecheck($number);
+	if($flag==1)
+		echo "$number is a prime number";
+	else
+		echo"$number is not prime number";
+
+}
+?>
+
+<html>
+<head>
+	<title>practice</title>
+</head>
+<body>
+	<form method="post" action="Practice.php">
+		<input type="post" name="num"/>
+		<input type="submit" value="submit" name="submit"/>
+	</form>
+</body>
+</html>
+
+<hr/>
+	<h2>Leap Year</h2>
+<hr/>
+<?php
+if (isset($_POST["submit"])){
+	$year=$_POST["year"];
+	if($year!=" "){
+	if ((($year % 4)==0) &&((($year%100) !=0)||(($year %400)==0))){
+		echo "$year is leap year";
+	}else{
+		echo "$year is not leap year";
+	}
+	}else{
+		echo"Please Enter Your year";
+	}
+}
+?>
+
+<html>
+<head>
+	<title>practice</title>
+</head>
+<body>
+	<form method="post" action="Practice.php">
+		<input type="post" name="year"/>
+		<input type="submit" value="submit" name="submit"/>
+	</form>
+</body>
+</html>
